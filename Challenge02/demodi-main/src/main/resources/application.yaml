@@ -1,0 +1,10 @@
+# Agregar su credenciales de mongo atlas
+
+spring:
+  data:
+    mongodb:
+      database: db_ms_certidigital
+      uri: mongodb+srv://Renato:1234@cluster0.8l8iw.mongodb.net/db_ms_certidigital?retryWrites=true&w=majority
+
+server :
+  port : 8082
