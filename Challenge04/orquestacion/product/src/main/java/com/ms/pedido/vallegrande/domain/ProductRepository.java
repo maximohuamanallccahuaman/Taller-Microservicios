@@ -8,6 +8,8 @@ public interface ProductRepository {
 
     Product create(Product product);
 
+    Product save(Product product);
+
     void update(Product product);
 
     void delete(String id);

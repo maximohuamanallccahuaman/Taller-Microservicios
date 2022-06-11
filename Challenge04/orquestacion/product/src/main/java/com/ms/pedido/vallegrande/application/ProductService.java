@@ -24,6 +24,12 @@ public class ProductService {
         return productRepository.findItemById(id);
     }
 
+    public Product saveProduct(Product product){ return this.productRepository.save(product);}
+
+    public void updateProduct(Product product){
+        this.productRepository.update(product);
+    }
+
     public Product create(Product product) {
         System.out.println(product.toString());
         return productRepository.create(product);

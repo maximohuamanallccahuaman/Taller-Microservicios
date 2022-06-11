@@ -2,6 +2,8 @@ package com.ms.pedido.vallegrande.infraestructure;
 
 import com.ms.pedido.vallegrande.domain.Product;
 import com.ms.pedido.vallegrande.domain.ProductRepository;
+import com.ms.pedido.vallegrande.domain.Stock;
+import com.ms.pedido.vallegrande.domain.StockClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.*;
@@ -34,6 +36,19 @@ public class ProductImpl implements ProductRepository {
     public Product create(Product product) {
         System.out.println(product.toString());
         return this.mongoOperations.save(product);
+    }
+
+    @Autowired
+    StockClient stockClient;
+
+    @Override
+    public Product save(Product product) {
+        Stock stock = stockClient.findItemById(product.getStock().;
+        if(stock != null){
+            product.setStock(stock);
+            return this.mongoOperations.save(product);
+        }
+        return null;
     }
 
     @Override

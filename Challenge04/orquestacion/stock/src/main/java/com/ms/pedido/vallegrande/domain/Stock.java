@@ -5,12 +5,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
 
-@Document(collection = "product")
+@Document(collection = "stock")
 @Data
-public class Product {
+public class Stock {
+
     @Id
     private String id;
-    private String name;
     private Integer stock;
-    private BigDecimal price;
+
 }

@@ -33,9 +33,14 @@ public class ProductController {
         return productService.findItemById(id);
     }
 
+//    @PostMapping
+//    public Product saveStudent(@RequestBody Product product){
+//        return productService.create(product);
+//    }
+
     @PostMapping
-    public Product saveStudent(@RequestBody Product product){
-        return productService.create(product);
+    private Product saveProduct(@RequestBody Product product){
+        return productService.saveProduct(product);
     }
 
     @PutMapping
